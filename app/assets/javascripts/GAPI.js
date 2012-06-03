@@ -46,19 +46,8 @@ function handleAuthClick(event) {
 // Load the API and make an API call.  Display the results on the screen.
 function makeApiCall() {
 	gapi.client.load('tasks', 'v1', function() {
-	  var request = gapi.client.tasks.get({
-	  });
-	  request.execute(function(resp) {
-	  	console.log(resp)
-	  	/*
-	    var heading = document.createElement('h4');
-	    var image = document.createElement('img');
-	    image.src = resp.image.url;
-	    heading.appendChild(image);
-	    heading.appendChild(document.createTextNode(resp.displayName));
-
-	    document.getElementById('content').appendChild(heading);
-	    */
-	  });
+		var restRequest = gapi.client.request({'path': '/users/@me/lists'}
+		});
+		restRequest.execute(function(resp) { console.log(resp); });
 	});
 }
