@@ -53,7 +53,7 @@ function getTaskLists() {
 }
 
 function apiRequestList(ListName) {
-		var restRequest = gapi.client.request({'path': '/tasks/v1/users/@me/lists/'+ListName+'/tasks'});
+		var restRequest = gapi.client.request({'path': 'https://www.googleapis.com/tasks/v1/lists/'+ListName+'/tasks'});
 		restRequest.execute(function(resp) { console.log(resp); });
 }
 
