@@ -31,7 +31,7 @@ function handleAuthResult(authResult) {
 	var authorizeButton = document.getElementById('authorize-button');
 	if (authResult) {
 	  authorizeButton.style.visibility = 'hidden';
-	  makeApiCall();
+	  //taskify
 	} else {
 	  authorizeButton.style.visibility = '';
 	  authorizeButton.onclick = handleAuthClick;
@@ -58,5 +58,13 @@ function apiRequestList(ListName) {
 }
 
 function getList(ListName) {
-	gapi.client.load('tasks', 'v1', apiRequestList());
+	gapi.client.load('tasks', 'v1', apiRequestList(ListName));
 }
+
+function taskify(){
+	//get all tasks in the important list
+	//get all other tasks
+	//store in local storage
+	//update DOM
+}
+
