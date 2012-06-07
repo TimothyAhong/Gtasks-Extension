@@ -5,9 +5,9 @@ function apiRequestTaskLists() {
 			localize('lists',resp);
 			for(x in resp.items){
 				if(resp.items[x].title=="Important")
-					getList(resp.items[x].id,"Important")
+					getList(resp.items[x].id,"Important");
 				else
-					getList(resp.items[x].id)
+					getList(resp.items[x].id);
 			}
 		});
 }
@@ -17,23 +17,27 @@ function getTaskLists() {gapi.client.load('tasks', 'v1', apiRequestTaskLists());
 function apiRequestList(listid,flag) {
 		var restRequest = gapi.client.request({'path': '/tasks/v1/lists/'+listid+'/tasks'});
 		restRequest.execute(function(resp,flag) {
-			//if(!(typeof(flag)==='undefined')){for(x in resp.items) resp.items[x][flag]=true;}
+			if(!(typeof(flag)==='undefined')){for(x in resp.items) resp.items[x][flag]=true;}
 			//update local storage array
+			console.log(resp.items)
 			A = localStorage.getObj('tasks')
 			B = new Array()
 			//not yet in local storage
 			if(A===null){
+				console.log('none')
 				B=resp.items
 			}
 			//only a single object in local storage
 			else if(!(A.length>0)){
 				B.push(A)
-				for(x in resp.items) B.push(resp.items[x])
+				console.log('single')
+				for(x in resp.items) B.push(resp.items[x]);
 			}
 			//array in local storage
 			else{
-				for(x in resp.items) A.push(resp.items[x]) 
+				console.log('multiple')
 				B = A
+				for(x in resp.items) B.push(resp.items[x]);
 			}
 			localStorage.setObj('tasks',B)
 		});
