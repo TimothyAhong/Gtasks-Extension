@@ -62,7 +62,7 @@ function getList(listid) {
 }
 
 function apiRequestTask(taskid,listid){
-		var restRequest = gapi.client.request({'path': '/tasks/v1/lists/'+listid+'/'+taskid});
+		var restRequest = gapi.client.request({'path': '/tasks/v1/lists/'+listid+'/tasks/'+taskid});
 		restRequest.execute(function(resp) { console.log(resp); });
 }
 
@@ -71,6 +71,8 @@ function getTask(taskid,listid){
 }
 
 function taskify(){
+	listList = new Object()
+	tasks = new Object()
 	//get all the lists
 	//get all the tasks on the important list
 	//get all the tasks on the other lists
