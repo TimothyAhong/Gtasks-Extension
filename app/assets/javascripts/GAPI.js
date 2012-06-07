@@ -52,18 +52,28 @@ function getTaskLists() {
 	gapi.client.load('tasks', 'v1', apiRequestTaskList());
 }
 
-function apiRequestList(ListName) {
-		var restRequest = gapi.client.request({'path': '/tasks/v1/lists/'+ListName+'/tasks'});
+function apiRequestList(listid) {
+		var restRequest = gapi.client.request({'path': '/tasks/v1/lists/'+listid+'/tasks'});
 		restRequest.execute(function(resp) { console.log(resp); });
 }
 
-function getList(ListName) {
-	gapi.client.load('tasks', 'v1', apiRequestList(ListName));
+function getList(listid) {
+	gapi.client.load('tasks', 'v1', apiRequestList(listid));
+}
+
+function apiRequestTask(taskid,listid){
+		var restRequest = gapi.client.request({'path': '/tasks/v1/lists/'+listid+'/'+taskid});
+		restRequest.execute(function(resp) { console.log(resp); });
+}
+
+function getTask(taskid,listid){
+	gapi.client.load('tasks','v1',apiRequestTask(taskid,listid))
 }
 
 function taskify(){
-	//get all tasks in the important list
-	//get all other tasks
+	//get all the lists
+	//get all the tasks on the important list
+	//get all the tasks on the other lists
 	//store in local storage
 	//update DOM
 }
