@@ -16,11 +16,13 @@ function apiRequestList(listid) {
 			A = localStorage.getObj('tasks')
 			B = new Array()
 			//not yet in local storage
-			if(A===null)
+			if(A===null){
 				B=resp.items
+			}
 			//only a single object in local storage
-			else if(A.length>1){
+			else if(!(A.length>0)){
 				B.push(A)
+				for(x in resp.items) B.push(resp.items[x])
 			}
 			//array in local storage
 			else{
