@@ -28,7 +28,7 @@ function localize(key,object){
 	//append if the local storage element exists
 	//create local storage element if it doesnt
 	if(localStorage.getObj(key)===null)
-		localStorage.setObj(object)
+		localStorage.setObj(key,object)
 	else
 		localStorage.appendObj(key,object)
 }
