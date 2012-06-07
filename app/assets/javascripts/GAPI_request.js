@@ -27,10 +27,10 @@ function localize(key,object){
 	console.log(object)
 	//append if the local storage element exists
 	//create local storage element if it doesnt
-	if(localStorage.getObj(key)!=null)
-		localStorage.appendObj(object)
+	if(localStorage.getObj(key)===null)
+		localStorage.setObj(object)
 	else
-		localStorage.setObj(key,object)
+		localStorage.appendObj(key,object)
 }
 
 //gets all the tasks and organizes them
