@@ -71,8 +71,6 @@ function getTask(taskid,listid){
 }
 
 function taskify(){
-	listList = new Object()
-	tasks = new Object()
 	//get all the lists
 	//get all the tasks on the important list
 	//get all the tasks on the other lists
