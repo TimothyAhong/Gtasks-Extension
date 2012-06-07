@@ -3,15 +3,23 @@ function apiRequestTaskLists() {
 		var restRequest = gapi.client.request({'path': '/tasks/v1/users/@me/lists'});
 		restRequest.execute(function(resp) { 
 			localize('lists',resp);
-			for(x in resp.items)getList(resp.items[x].id)
+			for(x in resp.items){
+				if(resp.items[x].title=="Important")
+					getList(resp.items[x].id,"Important")
+				else
+					getList(resp.items[x].id)
+			}
 		});
 }
 function getTaskLists() {gapi.client.load('tasks', 'v1', apiRequestTaskLists());}
 
 //gets the list of all the tasks on the given list
-function apiRequestList(listid) {
+function apiRequestList(listid,flag) {
 		var restRequest = gapi.client.request({'path': '/tasks/v1/lists/'+listid+'/tasks'});
-		restRequest.execute(function(resp) { 
+		restRequest.execute(function(resp,flag) {
+			if(typeof(flag)==='undefined'){}
+			else
+				for(x in resp.items) resp.items[x][flag]=true;
 			//update local storage array
 			A = localStorage.getObj('tasks')
 			B = new Array()
@@ -32,7 +40,7 @@ function apiRequestList(listid) {
 			localStorage.setObj('tasks',B)
 		});
 }
-function getList(listid) {gapi.client.load('tasks', 'v1', apiRequestList(listid));}
+function getList(listid,flag) {gapi.client.load('tasks', 'v1', apiRequestList(listid,flag));}
 
 //stores the data in local storage
 function localize(key,object){
