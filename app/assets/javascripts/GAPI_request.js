@@ -11,7 +11,7 @@ function getTaskLists() {gapi.client.load('tasks', 'v1', apiRequestTaskLists());
 //gets the list of all the tasks on the given list
 function apiRequestList(listid) {
 		var restRequest = gapi.client.request({'path': '/tasks/v1/lists/'+listid+'/tasks'});
-		restRequest.execute(function(resp) { localize('list',resp); });
+		restRequest.execute(function(resp) { localize('tasks',resp); });
 }
 function getList(listid) {gapi.client.load('tasks', 'v1', apiRequestList(listid));}
 

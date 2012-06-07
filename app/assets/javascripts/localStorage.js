@@ -6,8 +6,10 @@ Storage.prototype.getObj = function(key) {
 }
 Storage.prototype.appendObj = function(key, obj){
 	var A = localStorage.getObj(key)
-	if(A!=null)
-		return A.push(obj)
+	if(A!=null){
+		A.push(obj)
+		return localStorage.setObj(key,A)
+	}
 	else
 		return localStorage.setObj(key,obj)
 }
