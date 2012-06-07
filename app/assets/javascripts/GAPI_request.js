@@ -17,7 +17,7 @@ function getTaskLists() {gapi.client.load('tasks', 'v1', apiRequestTaskLists());
 function apiRequestList(listid,flag) {
 		var restRequest = gapi.client.request({'path': '/tasks/v1/lists/'+listid+'/tasks'});
 		restRequest.execute(function(resp,flag) {
-			if(!(typeof(flag)==='undefined')){for(x in resp.items) resp.items[x][flag]=true;}
+			//if(!(typeof(flag)==='undefined')){for(x in resp.items) resp.items[x][flag]=true;}
 			//update local storage array
 			A = localStorage.getObj('tasks')
 			B = new Array()
