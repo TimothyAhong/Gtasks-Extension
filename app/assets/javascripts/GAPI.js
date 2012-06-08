@@ -43,5 +43,9 @@ function handleAuthClick(event) {
 
 window.onload = function() {handleAuthClick()}
 //get tasks array from local storage
-tasks = new Array()
+if(localStorage.getObj('tasks')==null)
+	tasks = new Array()
+else
+	tasks = localStorage.getObj('tasks')
+
 //init draw
