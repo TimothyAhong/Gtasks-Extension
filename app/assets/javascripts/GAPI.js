@@ -30,6 +30,7 @@ function handleAuthResult(authResult) {
 	var authorizeButton = document.getElementById('authorize-button');
 	if (authResult) {
 	  authorizeButton.style.visibility = 'hidden';
+	  getTaskLists()
 	} else {
 	  authorizeButton.style.visibility = '';
 	  authorizeButton.onclick = handleAuthClick;
