@@ -20,6 +20,7 @@ function updateDOM(){
 function addTask(task,selector){
 	var prev = $('.'+selector).find('#inner').html()
 	prev+= "<div>"+task.title+"</div>"
+	$('.'+selector).find('#inner').html(prev)
 }
 
 function clearTasks(){
