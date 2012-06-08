@@ -4,6 +4,7 @@ Storage.prototype.setObj = function(key, obj) {
 Storage.prototype.getObj = function(key) {
     return JSON.parse(this.getItem(key))
 }
+//doesnt work
 Storage.prototype.appendObj = function(key, obj){
 	var A = localStorage.getObj(key)
 	if(A!=null){

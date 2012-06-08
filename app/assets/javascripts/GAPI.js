@@ -26,7 +26,6 @@ function checkAuth() {
 	gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: true}, handleAuthResult);
 }
 
-
 function handleAuthResult(authResult) {
 	var authorizeButton = document.getElementById('authorize-button');
 	if (authResult) {
@@ -43,3 +42,6 @@ function handleAuthClick(event) {
 }
 
 window.onload = function() {handleAuthClick()}
+//get tasks array from local storage
+tasks = new Array()
+//init draw

@@ -1,7 +1,10 @@
 //gets the list of all the task lists
 function apiRequestTaskLists() {
+		//if we get here does that mean that we are connected? if not then check before erasing our task list
+		tasks = []
 		var restRequest = gapi.client.request({'path': '/tasks/v1/users/@me/lists'});
 		restRequest.execute(function(resp) { 
+			//store the lists in local storage... dont know what for
 			localize('lists',resp);
 			for(x in resp.items){
 				if(resp.items[x].title=="Important")
@@ -17,12 +20,19 @@ function getTaskLists() {gapi.client.load('tasks', 'v1', apiRequestTaskLists());
 function apiRequestList(listid,flag) {
 		var restRequest = gapi.client.request({'path': '/tasks/v1/lists/'+listid+'/tasks'});
 		restRequest.execute(function(resp,flag) {
-			if(!(typeof(flag)==='undefined')){for(x in resp.items) resp.items[x][flag]=true;}
+			if(!(typeof(flag)==='undefined')){for(x in resp.items) resp.items[x][flag]=true;};
 			//update local storage array
 			console.log(resp.items)
+			//push in all our tasks
+			for(x in resp.items) tasks.push(resp.items[x])
+			//update local storage
+			localStorage.setObj('tasks',tasks)
+			//update DOM
+
+			//not yet in local storage
+			/*
 			A = localStorage.getObj('tasks')
 			B = new Array()
-			//not yet in local storage
 			if(A===null){
 				console.log('none')
 				B=resp.items
@@ -40,6 +50,7 @@ function apiRequestList(listid,flag) {
 				for(x in resp.items) B.push(resp.items[x]);
 			}
 			localStorage.setObj('tasks',B)
+			*/
 		});
 }
 function getList(listid,flag) {gapi.client.load('tasks', 'v1', apiRequestList(listid,flag));}
