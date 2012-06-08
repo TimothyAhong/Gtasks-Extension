@@ -24,8 +24,8 @@ function addTask(task,selector){
 }
 
 function clearTasks(){
-	$('.tl').find('#inner')html("")
-	$('.tr').find('#inner')html("")
-	$('.bl').find('#inner')html("")
-	$('.br').find('#inner')html("")
+	$('.tl').find('#inner').html("")
+	$('.tr').find('#inner').html("")
+	$('.bl').find('#inner').html("")
+	$('.br').find('#inner').html("")
 }
