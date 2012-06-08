@@ -5,7 +5,7 @@ function apiRequestTaskLists() {
 		var restRequest = gapi.client.request({'path': '/tasks/v1/users/@me/lists'});
 		restRequest.execute(function(resp) { 
 			//store the lists in local storage... dont know what for
-			localize('lists',resp);
+			localStorage.setObj('lists',resp);
 			for(x in resp.items){
 				if(resp.items[x].title=="Important")
 					getList(resp.items[x].id,"Important");
@@ -24,7 +24,7 @@ function apiRequestList(listid,flag) {
 			//update local storage array
 			console.log(resp.items)
 			//push in all our tasks
-			for(x in resp.items) tasks.push(resp.items[x])
+			for(x in resp.items) (tasks.push(resp.items[x]))
 			//update local storage
 			localStorage.setObj('tasks',tasks)
 			//update DOM
@@ -57,13 +57,8 @@ function getList(listid,flag) {gapi.client.load('tasks', 'v1', apiRequestList(li
 
 //stores the data in local storage
 function localize(key,object){
+	console.log('doesnt exist anymore')
 	console.log(object)
-	//append if the local storage element exists
-	//create local storage element if it doesnt
-	if(localStorage.getObj(key)===null)
-		localStorage.setObj(key,object)
-	else
-		localStorage.appendObj(key,object)
 }
 
 //gets all the tasks and organizes them
