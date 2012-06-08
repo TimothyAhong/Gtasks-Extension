@@ -7,9 +7,7 @@ function apiRequestTaskLists() {
 			//store the lists in local storage... dont know what for
 			localStorage.setObj('lists',resp);
 			console.log(resp)
-			for(x in resp.items){
-					getList(resp.items[x].id,resp.items[x].title);
-			}
+			for(x in resp.items) getList(resp.items[x].id,resp.items[x].title);
 		});
 }
 function getTaskLists() {gapi.client.load('tasks', 'v1', apiRequestTaskLists());}

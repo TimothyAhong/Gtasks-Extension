@@ -41,11 +41,12 @@ function handleAuthClick(event) {
 	return false;
 }
 
-window.onload = function() {handleAuthClick()}
-//get tasks array from local storage
-if(localStorage.getObj('tasks')==null)
-	tasks = new Array()
-else
-	tasks = localStorage.getObj('tasks')
+tasks = new Array()
+window.onload = function() {
+	if(!localStorage.getObj('tasks')==null) tasks = localStorage.getObj('tasks')
+	handleAuthClick()
+}
+
+	
 
 //init draw
