@@ -18,6 +18,10 @@ function updateDOM(){
 }
 
 function addTask(task,selector){
+	if(typeof(task)=='undefined') return;
+	if(typeof(task.title)=='undefined') return;
+	if(task.title=="") return;
+	
 	var prev = $('.'+selector).find('#inner').html();
 	prev+= "<div class='task'><h1>"+task.title+"</h1><br />";
 	if(typeof(task.notes)!='undefined'){
@@ -25,7 +29,7 @@ function addTask(task,selector){
 	if(typeof(task.due)!='undefined'){
 		prev+="<p3>Due: "+task.due+"</p3><br />";}
 	prev+="</div>";
-	prev+="<div class='line-separator'></div>"
+	prev+="<div class='line-separator'></div>";
 	$('.'+selector).find('#inner').html(prev)
 }
 
