@@ -47,9 +47,7 @@
     width: 80%;
     height: 80%;
     position:absolute;
-    -moz-box-shadow: 5px 5px 2px #888;
-	-webkit-box-shadow: 5px 5px 2px #888;
-	box-shadow: 5px 5px 2px #888;
+    border: dashed;
     top: 10%;
     left: 10%;
     overflow:scroll;
@@ -58,7 +56,6 @@
 span{
 	width:100%;
 	text-align:center;
-	background:gray;
 }
 
 p2{
