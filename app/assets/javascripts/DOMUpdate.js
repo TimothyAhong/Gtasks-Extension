@@ -25,6 +25,7 @@ function addTask(task,selector){
 	if(typeof(task.due)!='undefined'){
 		prev+="<p3>Due: "+task.due+"</p3><br />";}
 	prev+="</div>";
+	prev+="<div class='line-separator'></div>"
 	$('.'+selector).find('#inner').html(prev)
 }
 

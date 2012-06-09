@@ -60,15 +60,29 @@ span{
 	display:block;
 	padding: 5px;
 	background-color:light-gray;
+	font-size:1.2em;
 }
 
 h1{
 	font-size:1em;
+	padding: 5px;
+	padding-bottom:2px;
+	margin: 1px 1px 1px 1px;
 	
 }
 
 p2{
 	font-size:0.7em;
+}
+
+.line-separator{
+
+height:1px;
+
+background:#717171;
+
+border-bottom:1px solid #313030;
+
 }
 
 p3{
