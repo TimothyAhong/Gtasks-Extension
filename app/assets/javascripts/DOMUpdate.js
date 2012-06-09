@@ -19,11 +19,11 @@ function updateDOM(){
 
 function addTask(task,selector){
 	var prev = $('.'+selector).find('#inner').html();
-	prev+= "<div class='task'><h1>"+task.title+"</h1>";
-	if(!(task.notes==='undefined')){
-		prev+="<p2>Notes: "+task.notes+"</p2>";}
-	if(!(task.due==='undefined')){
-		prev+="<p3>Due: "+task.due+"</p3>";}
+	prev+= "<div class='task'><h1>"+task.title+"</h1><br />";
+	if(typeof(task.notes)!='undefined'){
+		prev+="<p2>Notes: "+task.notes+"</p2><br />";}
+	if(typeof(task.due)!='undefined'){
+		prev+="<p3>Due: "+task.due+"</p3><br />";}
 	prev+="</div>";
 	$('.'+selector).find('#inner').html(prev)
 }
