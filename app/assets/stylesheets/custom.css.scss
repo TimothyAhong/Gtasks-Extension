@@ -51,6 +51,7 @@
     top: 10%;
     left: 10%;
     overflow:scroll;
+    padding:5px;
 }
 
 span{
@@ -59,7 +60,7 @@ span{
 	align:center;
 	display:block;
 	padding: 5px;
-	background-color:light-gray;
+	background-color:;
 	font-size:1.2em;
 }
 
@@ -75,7 +76,8 @@ p2{
 }
 
 .line-separator{
-width:80%;
+margin-left:5px;
+margin-right:5px;
 height:1px;
 background:#717171;
 border-bottom:1px solid #313030;
