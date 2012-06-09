@@ -19,12 +19,12 @@ function updateDOM(){
 
 function addTask(task,selector){
 	var prev = $('.'+selector).find('#inner').html()
-	prev+= "<div class='task'><h1>"task.title+"</h1>"
+	prev+= "<div class='task'><h1>"task.title+"</h1>";
 	if(!task.notes==='undefined')
-		prev+="<p2>"+task.notes+"</p2>"
+		prev+="<p2>"+task.notes+"</p2>";
 	if(!task.due==='undefined')
-		prev+="<p3>"+task.due+"</p3>"
-	prev+="</div>"
+		prev+="<p3>"+task.due+"</p3>";
+	prev+="</div>";
 	$('.'+selector).find('#inner').html(prev)
 }
 

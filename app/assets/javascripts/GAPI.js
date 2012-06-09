@@ -34,6 +34,7 @@ function handleAuthResult(authResult) {
 	} else {
 	  authorizeButton.style.visibility = '';
 	  authorizeButton.onclick = handleAuthClick;
+	  getTaskLists()
 	}
 }
 
