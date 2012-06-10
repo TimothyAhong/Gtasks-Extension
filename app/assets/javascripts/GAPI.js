@@ -45,9 +45,15 @@ function handleAuthClick(event) {
 
 tasks = new Array()
 window.onload = function() {
-	if(!localStorage.getObj('tasks')==null) tasks = localStorage.getObj('tasks')
-	handleAuthClick()
+	if(!localStorage.getObj('tasks')==null) tasks = localStorage.getObj('tasks');
+	updateDOM();
+	if(navigator.onLine) handleAuthClick();
+	setInterval(function(){
+		updateDOM();
+		if(navigator.onLine)getTaskLists();
+	},10000);
 }
+
 
 	
 

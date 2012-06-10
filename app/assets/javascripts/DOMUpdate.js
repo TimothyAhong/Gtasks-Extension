@@ -23,11 +23,11 @@ function addTask(task,selector){
 	if(task.title=="") return;
 	
 	var prev = $('.'+selector).find('#inner').html();
-	prev+= "<div class='task'><h1>"+task.title+"</h1><br />";
+	prev+= "<div class='task'><h1>"+task.title+"<br /></h1>";
 	if(typeof(task.notes)!='undefined'){
-		prev+="<p2>Notes: "+task.notes+"</p2><br />";}
+		prev+="<p2>Notes: "+task.notes+"<br /></p2>";}
 	if(typeof(task.due)!='undefined'){
-		prev+="<p3>Due: "+task.due+"</p3><br />";}
+		prev+="<p3>Due: "+task.due+"<br /></p3>";}
 	prev+="</div>";
 	prev+="<div class='line-separator'></div>";
 	$('.'+selector).find('#inner').html(prev)

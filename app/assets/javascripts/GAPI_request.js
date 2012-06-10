@@ -23,9 +23,6 @@ function apiRequestList(listid,listname) {
 			for(x in resp.items) tasks.push(resp.items[x]);
 			//update local storage
 			localStorage.setObj('tasks',tasks)
-			//update DOM
-			updateDOM();
-
 		});
 }
 function getList(listid,flag) {gapi.client.load('tasks', 'v1', apiRequestList(listid,flag));}
