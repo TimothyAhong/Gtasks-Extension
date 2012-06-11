@@ -55,7 +55,7 @@ window.onload = function() {
 		updateDOM();
 		console.log('interval')
 		if(navigator.onLine)getTaskLists();
-	},5000);
+	},3000);
 }
 
 
