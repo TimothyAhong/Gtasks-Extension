@@ -49,21 +49,24 @@ window.onload = function() {
 
 	$("#login").click(function() {
 	  console.log("login")
-	  if(navigator.onLine) handleAuthClick();
+	  if(navigator.onLine) 
+	  	handleAuthClick();
 	});
 
 	$("#re-sync").click(function() {
 	  console.log("re-sync")
-	  if(navigator.onLine) getTaskLists();
+	  if(navigator.onLine) 
+	  		getTaskLists();
 	});
 
-
+/*
 	if(navigator.onLine) handleAuthClick();
 	setInterval(function(){
 		updateDOM();
 		console.log('interval')
 		if(navigator.onLine)getTaskLists();
 	},3000);
+*/
 }
 
 
