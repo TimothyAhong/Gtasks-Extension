@@ -1,38 +1,52 @@
 <button style='display:none;' id="authorize-button">Authorize</button>
 <table>
 
-<div class="tl">
-	<span>Important no deadline</span>
-	<div id="inner">
-		<div><div class='task'><h1>task.title<br /></h1><p2>Notes: "+task.notes+"<br /></p2><p3>Due: "+task.due+"<br /></p3></div></div><div class='line-separator'></div>
-		<div>Task 1</div>
-		<div>Task 1</div>
-		<div>Task 1</div>
-		<div>Task 1</div>
-		<div>Task 1</div>
-		<div>Task 1</div>
-		<div>Task 1</div>
-		<div>Task 1</div>
-		<div>Task 1</div>
-	</div>
-</div>
-</div>
-<div class="tr">
-	<span>Important with deadline</span>
-	<div id="inner">
-		<div id="results"></div>
-	</div>
-</div>
-<div class="bl">
-	<span>Not important no deadline</span>
-	<div id="inner">
 
-	</div>
-</div>
-<div class="br">
-	<span>Not important with deadline</span>
-	<div id="inner">
+<table class="table table-condensed">
+    <tbody>
+        <tr>
+            <td><div class="cont">
+            	<table class="table table-condensed table-bordered table-striped">
+				    <caption>Important</caption>
+				    <tbody id="imp">
 
-	</div>
-</div>
+				    </tbody>
+				</table>
+            </div></td>
+            <td><div class="cont">
+            	<table class="table table-condensed  table-bordered">
+				    <caption>Important & Urgent</caption>
+				    <tbody id="imp_urg">
+
+				    </tbody>
+				</table>
+            </div></td>
+        </tr>
+        <tr>
+            <td><div class="cont">
+            	<table class="table table-condensed table-bordered">
+				    <caption></caption>
+				    <tbody id="urg">
+
+				    </tbody>
+				</table>
+            </div></td>
+            <td><div class="cont">
+            	<table class="table table-condensed table-bordered">
+				    <caption>Urgent</caption>
+				    <tbody id="none">
+
+				    </tbody>
+				</table>	
+            </div></td>
+        </tr>
+    </tbody>
 </table>
+
+
+
+
+
+
+
+

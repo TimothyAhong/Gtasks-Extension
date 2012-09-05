@@ -46,6 +46,18 @@ window.onload = function() {
 	console.log('tasks')
 	console.log(tasks)
 	updateDOM();
+
+	$("#login").click(function() {
+	  console.log("login")
+	  if(navigator.onLine) handleAuthClick();
+	});
+
+	$("#re-sync").click(function() {
+	  console.log("re-sync")
+	  if(navigator.onLine) getTaskLists();
+	});
+
+
 	if(navigator.onLine) handleAuthClick();
 	setInterval(function(){
 		updateDOM();

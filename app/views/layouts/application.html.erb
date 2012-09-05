@@ -20,7 +20,16 @@
     -->
   </head>
   <body>
-    <div class="container" style="width:100%">
+    
+    <div class="container">
+      <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <button class="btn btn-primary btn-large" type="submit" id="login">Login</button>
+                <button class="btn btn-primary btn-large" type="submit" id="re-sync">Re-Sync</button>
+            </div>
+        </div>
+      </div>
       <%= yield %>
     </div>
   </body>
