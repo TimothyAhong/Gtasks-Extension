@@ -24,9 +24,9 @@ function addTask(task,selector){
 
 	var prev = $('#'+selector).html();
 
-	prev+="<tr><td>"task.title"</td>"
+	prev+="<tr><td>"+task.title+"</td>"
 	if(task.due){
-		prev+="<td>"task.due"</td>"
+		prev+="<td>"+task.due+"</td>"
 	}
 	prev+="</tr>"
 	$('#'+selector).html(prev)
