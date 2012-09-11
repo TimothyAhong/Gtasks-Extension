@@ -50,14 +50,21 @@ window.onload = function() {
 	$("#login").click(function() {
 	  console.log("login")
 	  if(navigator.onLine) 
+	  {
 	  	handleAuthClick();
+	  	updateDOM();
+	  }
+	  	
 	});
 
 	$("#re-sync").click(function() {
 	  console.log("re-sync")
+	  updateDOM();
 	  if(navigator.onLine) 
-	  		getTaskLists();
-	  		updateDOM();
+	  {
+	  	getTaskLists();
+	  }
+	  updateDOM();
 	});
 
 /*
