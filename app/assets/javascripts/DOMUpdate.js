@@ -4,15 +4,21 @@ function updateDOM(){
 	clearTasks()
 	//for every task 
 	for(x in tasks){
-		hasDate = (tasks[x].due != undefined)
-		important = (tasks[x].listname=='Important')
-		if(hasDate){
-			if(important){var selector = 'imp_urg';}
-			else {var selector = 'urg';}
+		no_date = (typeof(tasks[x].due) == 'undefined' || tasks[x].due == null || tasks[x].due == "")
+		important = (tasks[x].listname == 'Important')
+		if(!no_date){
+			if(important){
+				var selector = 'imp_urg';
+			} else {
+				var selector = 'urg';
+			}
 		}
 		else{
-			if(important){var selector = 'urg';}
-			else {var selector = 'none';}
+			if(important){
+				var selector = 'urg';
+			} else {
+				var selector = 'none';
+			}
 		}
 		addTask(tasks[x],selector)
 	}
