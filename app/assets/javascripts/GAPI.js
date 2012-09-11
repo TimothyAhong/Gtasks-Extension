@@ -59,12 +59,10 @@ window.onload = function() {
 
 	$("#re-sync").click(function() {
 	  console.log("re-sync2")
-	  updateDOM();
 	  if(navigator.onLine) 
 	  {
 	  	getTaskLists();
 	  }
-	  updateDOM();
 	});
 
 /*
