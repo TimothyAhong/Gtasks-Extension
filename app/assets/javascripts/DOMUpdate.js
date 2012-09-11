@@ -1,4 +1,5 @@
 function updateDOM(){
+	console.log("AAA")
 	//clear tasks
 	clearTasks()
 	//for every task 
