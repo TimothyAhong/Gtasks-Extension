@@ -4,7 +4,7 @@ function updateDOM(){
 	clearTasks()
 	//for every task 
 	for(x in tasks){
-		hasDate = (typeof(tasks[x].due)=='undefined')
+		hasDate = (tasks[x].due != undefined)
 		important = (tasks[x].listname=='Important')
 		if(hasDate){
 			if(important){var selector = 'imp_urg';}
