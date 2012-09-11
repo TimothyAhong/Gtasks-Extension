@@ -57,6 +57,7 @@ window.onload = function() {
 	  console.log("re-sync")
 	  if(navigator.onLine) 
 	  		getTaskLists();
+	  		updateDOM();
 	});
 
 /*

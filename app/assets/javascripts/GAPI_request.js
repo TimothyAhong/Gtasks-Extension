@@ -33,8 +33,3 @@ function localize(key,object){
 	console.log(object)
 }
 
-//handler to Re-Sync button
-	//getTaskLists()
-
-//timeout for automatic Re-Syncing
-	//getTaskLists()
