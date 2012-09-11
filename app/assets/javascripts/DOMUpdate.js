@@ -1,9 +1,9 @@
 function updateDOM(){
-	console.log("AAA")
 	//clear tasks
 	clearTasks()
 	//for every task 
 	for(x in tasks){
+		console.log(tasks[x]);
 		no_date = (typeof(tasks[x].due) == 'undefined' || tasks[x].due == null || tasks[x].due == "")
 		important = (tasks[x].listname == 'Important')
 		if(!no_date){
@@ -32,7 +32,7 @@ function addTask(task,selector){
 	var prev = $('#'+selector).html();
 
 	prev+="<tr><td>"+task.title+"</td>"
-	if(task.due){
+	if(typeof(task.due) != 'undefined' ){
 		prev+="<td>"+task.due+"</td>"
 	}
 	prev+="</tr>"
