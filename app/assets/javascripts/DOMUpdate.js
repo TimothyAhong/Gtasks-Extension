@@ -15,7 +15,7 @@ function updateDOM(){
 		}
 		else{
 			if(important){
-				var selector = 'urg';
+				var selector = 'imp';
 			} else {
 				var selector = 'none';
 			}
